@@ -422,9 +422,9 @@
 \[ \sqrt{\lambda_{k}} \in \{ \sqrt{\lambda} \, | \, \sqrt{\lambda} l + \arctg \frac{\beta \sqrt{\lambda}}{\alpha} = \pi k, \, k \in \mathbb{N}. \} \]
 Отнормируем собственную функцию ($\tg \varphi = \frac{\mu \beta}{\alpha}$):
 \[ 1 = C_{k}^2 \int_{0}^{l} (\cos \sqrt{\lambda_{k}} x + \frac{\alpha}{\beta \mu_{k}} \sin \sqrt{\lambda_{k}} x)^2 = C_{k}^2 (1 + (\frac{\alpha}{\beta \mu_{k}})^2) \int_{0}^{l} \sin^2 (\sqrt{\lambda_{k}}x + \varphi) dx = \]
-\[ = C_{k}^2 (1 + (\frac{\alpha}{\beta \mu_{k}})^2) (\frac{x}{2} - \frac{1}{2\sqrt{\lambda_{k}}} \sin (\sqrt{2\lambda_{k}}x + \varphi))_{0}^{l} = C_{k}^2 (1 + (\frac{\alpha}{\beta \mu_{k}})^2) (\frac{l}{2} - \frac{1}{2\sqrt{\lambda_{k}}} \sin (\sqrt{2\lambda_{k}}l + \varphi) + \sin 2\varphi)\]
+\[ = C_{k}^2 (1 + (\frac{\alpha}{\beta \mu_{k}})^2) (\frac{x}{2} - \frac{1}{2\sqrt{\lambda_{k}}} \sin (2\sqrt{\lambda_{k}}x + \varphi))_{0}^{l} = C_{k}^2 (1 + (\frac{\alpha}{\beta \mu_{k}})^2) (\frac{l}{2} - \frac{1}{2\sqrt{\lambda_{k}}} (\sin (2\sqrt{\lambda_{k}}l + \varphi) + \sin 2\varphi))\]
 Отсюда:
-\[ C_{k} = \sqrt{\frac{1}{(1 + (\frac{\alpha}{\beta \sqrt{\lambda_{k}}})^2) (\frac{l}{2} - \frac{1}{2\sqrt{\lambda_{k}}} \sin (\sqrt{2\lambda_{k}}l + \varphi) + \sin 2\varphi)}} \]
+\[ C_{k} = \sqrt{\frac{1}{(1 + (\frac{\alpha}{\beta \sqrt{\lambda_{k}}})^2) (\frac{l}{2} - \frac{1}{2\sqrt{\lambda_{k}}} (\sin (2\sqrt{\lambda_{k}}l + \varphi) + \sin 2\varphi))}} \]
 
 \subsubsection{ $ \alpha > 0, \beta > 0, \gamma = 0, \delta > 0. $}
 В этом случае:
@@ -452,9 +452,9 @@
 \[ \sqrt{\lambda_{k}} \in \{ \sqrt{\lambda} \, | \, \sqrt{\lambda} l + \arctg \frac{\beta \sqrt{\lambda}}{\alpha} = \pi k, \, k \in \mathbb{N}. \} \]
 Отнормируем собственную функцию ($\tg \varphi = \frac{\mu \beta}{\alpha}$):
 \[ 1 = C_{k}^2 \int_{0}^{l} (\cos \sqrt{\lambda_{k}} x + \frac{\alpha}{\beta \mu_{k}} \sin \sqrt{\lambda_{k}} x)^2 = C_{k}^2 (1 + (\frac{\alpha}{\beta \mu_{k}})^2) \int_{0}^{l} \sin^2 (\sqrt{\lambda_{k}}x + \varphi) dx = \]
-\[ = C_{k}^2 (1 + (\frac{\alpha}{\beta \mu_{k}})^2) (\frac{x}{2} - \frac{1}{2\sqrt{\lambda_{k}}} \sin (\sqrt{2\lambda_{k}}x + \varphi))_{0}^{l} = C_{k}^2 (1 + (\frac{\alpha}{\beta \mu_{k}})^2) (\frac{l}{2} - \frac{1}{2\sqrt{\lambda_{k}}} \sin (\sqrt{2\lambda_{k}}l + \varphi) + \sin 2\varphi)\]
+\[ = C_{k}^2 (1 + (\frac{\alpha}{\beta \mu_{k}})^2) (\frac{x}{2} - \frac{1}{2\sqrt{\lambda_{k}}} \sin (2\sqrt{\lambda_{k}}x + \varphi))_{0}^{l} = C_{k}^2 (1 + (\frac{\alpha}{\beta \mu_{k}})^2) (\frac{l}{2} - \frac{1}{2\sqrt{\lambda_{k}}} (\sin (2\sqrt{\lambda_{k}}l + \varphi) + \sin 2\varphi))\]
 Отсюда:
-\[ C_{k} = \sqrt{\frac{1}{(1 + (\frac{\alpha}{\beta \sqrt{\lambda_{k}}})^2) (\frac{l}{2} - \frac{1}{2\sqrt{\lambda_{k}}} \sin (\sqrt{2\lambda_{k}}l + \varphi) + \sin 2\varphi)}} \]
+\[ C_{k} = \sqrt{\frac{1}{(1 + (\frac{\alpha}{\beta \sqrt{\lambda_{k}}})^2) (\frac{l}{2} - \frac{1}{2\sqrt{\lambda_{k}}} (\sin (2\sqrt{\lambda_{k}}l + \varphi) + \sin 2\varphi))}} \]
 
 \subsubsection{ $ \alpha > 0, \beta > 0, \gamma > 0, \delta > 0. $}
 В этом случае:
@@ -483,8 +483,25 @@
 \[ \sqrt{\lambda_{k}} \in \{ \sqrt{\lambda} \, | \, \mu l + \arctg \frac{\beta \delta \lambda - \alpha \gamma}{\gamma \beta \sqrt{\lambda} + \alpha \delta \sqrt{\lambda}} = \frac{\pi}{2} + \pi k, k \in \mathbb{N}. \} \]
 Отнормируем собственную функцию ($\tg \varphi = \frac{\mu \beta}{\alpha}$):
 \[ 1 = C_{k}^2 \int_{0}^{l} (\cos \sqrt{\lambda_{k}} x + \frac{\alpha}{\beta \mu_{k}} \sin \sqrt{\lambda_{k}} x)^2 = C_{k}^2 (1 + (\frac{\alpha}{\beta \mu_{k}})^2) \int_{0}^{l} \sin^2 (\sqrt{\lambda_{k}}x + \varphi) dx = \]
-\[ = C_{k}^2 (1 + (\frac{\alpha}{\beta \mu_{k}})^2) (\frac{x}{2} - \frac{1}{2\sqrt{\lambda_{k}}} \sin (\sqrt{2\lambda_{k}}x + \varphi))_{0}^{l} = C_{k}^2 (1 + (\frac{\alpha}{\beta \mu_{k}})^2) (\frac{l}{2} - \frac{1}{2\sqrt{\lambda_{k}}} \sin (\sqrt{2\lambda_{k}}l + \varphi) + \sin 2\varphi)\]
+\[ = C_{k}^2 (1 + (\frac{\alpha}{\beta \mu_{k}})^2) (\frac{x}{2} - \frac{1}{2\sqrt{\lambda_{k}}} \sin (2\sqrt{\lambda_{k}}x + \varphi))_{0}^{l} = C_{k}^2 (1 + (\frac{\alpha}{\beta \mu_{k}})^2) (\frac{l}{2} - \frac{1}{2\sqrt{\lambda_{k}}} (\sin (2\sqrt{\lambda_{k}}l + \varphi) + \sin 2\varphi))\]
 Отсюда:
-\[ C_{k} = \sqrt{\frac{1}{(1 + (\frac{\alpha}{\beta \sqrt{\lambda_{k}}})^2) (\frac{l}{2} - \frac{1}{2\sqrt{\lambda_{k}}} \sin (\sqrt{2\lambda_{k}}l + \varphi) + \sin 2\varphi)}} \]
+\[ C_{k} = \sqrt{\frac{1}{(1 + (\frac{\alpha}{\beta \sqrt{\lambda_{k}}})^2) (\frac{l}{2} - \frac{1}{2\sqrt{\lambda_{k}}} (\sin (2\sqrt{\lambda_{k}}l + \varphi) + \sin 2\varphi))}} \]
+
+\section{Численное построение графиков собственных функций}
+Для последнего случая при $\lambda > 0$ были найдены численно пять собственных значений, построены графики собственных функций, отвечающих этим собственным значениям, а также был построен график изменения амплитуды колебания с ростом значения собственного числа.
+\newline
+Численно найденные собственные значения: $\lambda_{1} = 1.52170$, $\lambda_{2} = 2.30388$, $\lambda_{3} = 3.38247$, $\lambda_{4} = 4.55452$, $\lambda_{5} = 8.22286$.
+\newline
+Построенные графики представлены ниже.
+
+\begin{figure}[h!]
+	\center{\includegraphics[scale=0.6]{UMF_PIC}}
+	\caption{Численно построенные графики}
+\end{figure}
+
+Как видно из последнего графика, показывающего зависимость амплитуды колебаний от собственного значения, амплитуда колебаний при большом собственном значении оказывается примерно равным $\sqrt{\frac{2}{l}}$. Это же подтверждается и аналитически
+
+\[ \lim\limits_{\lambda \to +\infty} \sqrt{\frac{1}{(1 + (\frac{\alpha}{\beta \sqrt{\lambda}})^2) (\frac{l}{2} - \frac{1}{2\sqrt{\lambda}} (\sin (2\sqrt{\lambda}l + \varphi) + \sin 2\varphi))}} =  \sqrt{\frac{2}{l}}. \]
+
 
 \end{document}
