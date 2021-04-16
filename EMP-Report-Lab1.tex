@@ -299,9 +299,67 @@
 
 \subsubsection{ $ \alpha > 0, \beta > 0, \gamma > 0, \delta = 0. $}
 \subsubsection{ $ \alpha > 0, \beta > 0, \gamma = 0, \delta > 0. $}
+В этом случае:
+\begin{equation}
+	\begin{cases}
+		\alpha (C_{1} + C_{2}) - \beta \mu (C_{2} - C_{1}) = 0, \\
+		\delta \mu (C_{2} e^{\mu l} - C_{1} e^{-\mu l}) = 0
+	\end{cases}
+\end{equation}
+Выразим $C_{2}$ через $C_{1}$ в первом уравнении:
+\begin{equation}
+	\begin{cases}
+		C_{2} = -\frac{\beta \mu + \alpha}{\beta \mu - \alpha} C_{1}, \\
+		- \delta \mu C_{1} (\frac{\beta \mu + \alpha}{\beta \mu - \alpha} e^{\mu l} + e^{-\mu l}) = 0
+	\end{cases}
+\end{equation}
+Домножим последнее уравнение на $e^{\mu l}$ и $\frac{\beta \mu - \alpha}{\beta \mu + \alpha}$ и занулим скобку:
+\[ e^{2\mu l} = -\frac{\beta \mu - \alpha}{\beta \mu + \alpha} \]
+Слева в уравнении, очевидно, стоит монотонно возрастающая функция. Справа имеем гиперболу с вертикальной асимптотой $\mu = -\frac{\alpha}{\beta} < 0$. Но $\mu = \sqrt{-\lambda}$, поэтому рассматриваем только положительные $\mu$. Производная функции справа по $\mu$ равна: $\frac{-2\alpha \beta}{(\beta \mu + \alpha)^2} < 0$, значит гипербола убывает на всей своей области определения. При $\mu = 0$ функции совпадают, затем расходятся, поэтому при положительных $\mu$ обращение скобки в нуль невозможно. Значит возможно только $C_{1} = 0$ и, следовательно, $C_{2} = 0$, и решение тривиально.
+
+\[ C_{1} = 0, \, C_{2} = 0, \, X(x) = 0. \]
+
 \subsubsection{ $ \alpha > 0, \beta > 0, \gamma > 0, \delta > 0. $}
+В этом случае:
+\begin{equation}
+	\begin{cases}
+		\alpha (C_{1} + C_{2}) - \beta \mu (C_{2} - C_{1}) = 0, \\
+		\gamma (C_{1} e^{-\mu l} + C_{2} e^{\mu l}) + \delta \mu (C_{2} e^{\mu l} - C_{1} e^{-\mu l}) = 0
+	\end{cases}
+\end{equation}
+Выразим $C_{2}$ через $C_{1}$ в первом уравнении:
+\begin{equation}
+	\begin{cases}
+		C_{2} = -\frac{\beta \mu + \alpha}{\beta \mu - \alpha} C_{1}, \\
+		\gamma (C_{1} e^{-\mu l} -\frac{\beta \mu + \alpha}{\beta \mu - \alpha} C_{1} e^{\mu l}) + \delta \mu (-\frac{\beta \mu + \alpha}{\beta \mu - \alpha} C_{1} e^{\mu l} - C_{1} e^{-\mu l}) = 0
+	\end{cases}
+\end{equation}
+Умножим последнее уравнение на $e^{\mu l} и вынесем C_{1}$:
+\begin{equation}
+	\begin{cases}
+		C_{2} = -\frac{\beta \mu + \alpha}{\beta \mu - \alpha} C_{1}, \\
+		\gamma C_{1}(1 -\frac{\beta \mu + \alpha}{\beta \mu - \alpha} e^{2 \mu l}) + \delta \mu C_{1} (-\frac{\beta \mu + \alpha}{\beta \mu - \alpha} e^{2\mu l} - 1) = 0
+	\end{cases}
+\end{equation}
+Преобразуем второй уравнение:
+\[ C_{1} ( -\frac{\beta \mu + \alpha}{\beta \mu - \alpha} (\gamma + \delta \mu ) e^{2 \mu l} - (\delta \mu - \gamma)) = 0 \]
+Приравняем скобку к нулю и получим уравнение, которое нужно решить относительно $\mu$:
+\[ e^{2\mu l} = - \frac{\beta \mu - \alpha}{\beta \mu + \alpha} \frac{\delta \mu - \gamma}{\delta \mu + \gamma}\]
+При $\mu = 0$ экспонента равна 1, а функция справа -1, на бесконечности экспонента устремляется к бесконечности, монотонно возрастая, а функция справа стремится к -1, причём скорость роста экспоненты выше, чем скорость функции справа, поэтому пересечения графиков быть не может. Следовательно, скобка не может обратиться к нуль, а значит равенство нулю второго уравнения системы возможно только лишь в случае $C_{1} = 0$. Из этого следует, что $C_{2} = 0$ и решение тривиально.
+
+\[ C_{1} = 0, \, C_{2} = 0, \, X(x) = 0. \]
 
 \subsection{$\lambda > 0$}
+
+В этом случае решение уравнения имеет вид:
+\[ X(x) = C_{1} \cos \sqrt{\lambda} x + C_{2} \sin \sqrt{\lambda}x. \]
+Заменим $\sqrt{\lambda}$ на $\mu$ и подставим решение в граничные условия. Получим:
+\begin{equation}
+	\begin{cases}
+		\alpha C_{1} - \beta \mu C_{2} = 0, \\
+		\gamma (C_{1} \cos \mu l + C_{2} \sin \mu l) + \delta \mu ( -C_{1} \sin \mu l + C_{2} \cos \mu l) = 0
+	\end{cases}
+\end{equation}
 
 \subsubsection{ $ \alpha > 0, \beta = 0, \gamma > 0, \delta = 0. $}
 \subsubsection{ $ \alpha > 0, \beta = 0, \gamma = 0, \delta > 0. $}
@@ -309,6 +367,27 @@
 \subsubsection{ $ \alpha = 0, \beta > 0, \gamma = 0, \delta > 0. $}
 \subsubsection{ $ \alpha > 0, \beta = 0, \gamma > 0, \delta > 0. $}
 \subsubsection{ $ \alpha = 0, \beta > 0, \gamma > 0, \delta > 0. $}
+В этом случае:
+\begin{equation}
+	\begin{cases}
+		C_{2} = 0, \\
+		C_{1} (\gamma \cos \mu l - \delta \mu \sin \mu l) = 0
+	\end{cases}
+\end{equation}
+Ищем нетривиальные решения, поэтому занулим во втором уравнении скобку и сделаем некоторое преобразование:
+\[ \sqrt{\gamma ^2 + (\delta \mu)^2 }(\frac{\gamma}{\sqrt{\gamma ^2 + (\delta \mu)^2 }} \cos \mu l - \frac{\delta \mu}{\sqrt{\gamma ^2 + (\delta \mu)^2 }}\sin \mu l) = 0 \]
+Обозначим $\tg \Omega = \frac{\delta \mu}{\gamma}$ и свернём получившееся выражение в скобке по формуле косинуса суммы:
+\[ \sqrt{\gamma ^2 + (\delta \mu)^2 } cos(\mu l + \arctg  \frac{\delta \mu}{\gamma}) = 0 \]
+Из условий на параметры и на собственное число получим, что:
+\[ \mu l + \arctg  \frac{\delta \mu}{\gamma} = \frac{\pi}{2} + \pi k, \, k \in \mathbb{N}. \]
+Слева получили, очевидно, монотонно возрастающую функцию, справа уравнение горизонтальной прямой. Понятно, что, в силу свойств функций, обязательно найдётся при каждом $k$ такое $\mu ^{*}_{k}$, которое будет удовлетворять полученному уравнению. Значит $C_{1} \ne 0$ и получено нетривиальное решение (или собственная функция), соответствующая собственному числу $\mu ^{*}_{k}$.
+
+\[ C_{1} = const \ne 0, \, C_{2} = 0, \, X(x) = C_{1} \cos \sqrt{\lambda_{k}} x, \, \sqrt{\lambda_{k}} \in \{\sqrt{\lambda} \, | \sqrt{\lambda} l + \arctg  \frac{\delta \sqrt{\lambda}}{\gamma} = \frac{\pi}{2} + \pi k, \, k \in \mathbb{N}\}. \]
+Отнормируем собственную функцию:
+\[ 1 = (C_{k} \cos \sqrt{\lambda_{k}} x, C_{k} \cos \sqrt{\lambda_{k}} x) = C_{k}^2 \int_{0}^{l}  \cos^2 \sqrt{\lambda_{k}} xdx = C_{k}^2 (\frac{x}{2} + \frac{1}{2\lambda_{k}} \sin 2\lambda_{k} x)_0^l =   C_{k}^2 (\frac{l}{2} + \frac{1}{2\lambda_{k}} \sin 2\lambda_{k} l) \]
+Отсюда:
+\[ C_{k} = \sqrt{\frac{1}{\frac{l}{2} + \frac{1}{2\lambda_{k}} \sin 2\lambda_{k} l}}. \]
+
 \subsubsection{ $ \alpha > 0, \beta > 0, \gamma > 0, \delta = 0. $}
 \subsubsection{ $ \alpha > 0, \beta > 0, \gamma = 0, \delta > 0. $}
 \subsubsection{ $ \alpha > 0, \beta > 0, \gamma > 0, \delta > 0. $}
