@@ -1,4 +1,4 @@
-\documentclass[12pt, a4paper]{article}
+\documentclass[12pt, a4paper]{report}
 
 \usepackage[T2A]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -6,6 +6,7 @@
 \usepackage[left = 1 cm, right = 1 cm, top = 2cm, bottom = 2 cm, bindingoffset = 0 cm]{geometry}
 \usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}
 \usepackage{wasysym}
+\usepackage{float}
 
 \usepackage{graphicx}
 \graphicspath{{pictures/}}
@@ -29,8 +30,8 @@
 \vspace{12em}
 
 \begin{center}
-\textsc{\textbf{Отчёт по лабораторной работе:}}\\
-\textsc{\textbf{"Задача Штурма-Лиувилля"}}
+\textsc{\textbf{Отчёт по лабораторной работе}}\\
+\textsc{\textbf{Уравнения математической физики}}
 \end{center}
 
 \vspace{14em}
@@ -51,13 +52,12 @@
 \vspace{\fill}
 
 \begin{center}
-Нижний Новгород \\2020
+Нижний Новгород \\2021
 \end{center}
 
 \end{titlepage}       
 
-
-\section{Задача Штурма-Лиувилля}
+\chapter{Задача Штурма-Лиувилля}
 
 Задача Штурма-Лиувилля является простейшей задачей о поиске ортонормированной системы: найти те значения параметра $\lambda$, при которых существует нетривиальные решения задачи:
 \[ X'' + \lambda X = 0 \]
@@ -81,6 +81,8 @@
 
 
 \section{Для всех возможных девяти случаев найти собственные числа и собственный функции задачи Штурма-Лиувилля (собственные функции отнормировать!)}
+
+
 Рассмотрим разные значения $\lambda$ в задаче Штурма-Лиувилля.
 \subsection{$\lambda = 0$}
 В этом случае уравнение имеет вид:
@@ -90,7 +92,7 @@
 где $C_{1}$ и $C_{2}$ - произвольные постоянные. Подставим это решение в граничные условия и получим, что:
 \[\alpha C_{2} - \beta C_{1} = 0, \quad \gamma (C_{1} l + C_{2}) + \delta C_{1} = 0. \]
 
-\subsubsection{ $ \alpha > 0, \beta = 0, \gamma > 0, \delta = 0. $}
+\subsubsection{$ \alpha > 0, \beta = 0, \gamma > 0, \delta = 0.$}
 В этом случае:
 \[\alpha C_{2} = 0, \quad \gamma (C_{1} l + C_{2}) = 0, \]
 \[ C_{2} = 0, \quad  \gamma C_{1} l = 0. \]
@@ -298,6 +300,24 @@
 \[ C_{1} = 0, \, C_{2} = 0, \, X(x) = 0. \]
 
 \subsubsection{ $ \alpha > 0, \beta > 0, \gamma > 0, \delta = 0. $}
+
+В этом случае:
+
+\begin{equation*}
+ \begin{cases}
+ C_1(\alpha -\beta)+\sqrt{-\lambda} C_2(\alpha+\beta) =0, 
+   \\
+C_1\sqrt{-\lambda} e^{\sqrt{-\lambda}l}-C_2\sqrt{-\lambda} e^{\sqrt{-\lambda}l}=0
+   \\  
+ \end{cases}
+\end{equation*}
+Пусть $C_1$ и $C_2$ не обращаются одновременно в 0:
+Выразим выражение $\frac{C_1}{C_2}$ через первое и второе уравнение в системе:
+
+\[\frac{C_1}{C_2} = e^{-2\sqrt{-\lambda}l}=-\frac{\sqrt{-\lambda}(\alpha+\beta)}{\beta-\alpha}\]
+Это уравнение не имеет решений.
+Из второго уравнения следует, что равняться нулю только одна из констант не может, поэтому наша задача имеет только тривиальное решение  $X_n(x)=0$.
+
 \subsubsection{ $ \alpha > 0, \beta > 0, \gamma = 0, \delta > 0. $}
 В этом случае:
 \begin{displaymath}
@@ -362,10 +382,188 @@
 \end{displaymath}
 
 \subsubsection{ $ \alpha > 0, \beta = 0, \gamma > 0, \delta = 0. $}
+
+В этом случае:
+
+\begin{equation*}
+ \begin{cases}
+\alpha C_2=0, 
+   \\
+\gamma C_1 sin(\sqrt{\lambda}l )=0
+   \\  
+ \end{cases}
+\end{equation*}
+
+\begin{equation*}
+ \begin{cases}
+C_2=0, 
+   \\
+C_1 sin(\sqrt{\lambda}l )=0
+   \\  
+ \end{cases}
+\end{equation*}
+Интересуемся нетривиальными решениями, $C_1$ не может быть равно 0, поэтому приравняем $sin(\sqrt{\lambda}l) $ к нулю: 
+\[sin(\sqrt{\lambda}l) =0,\]
+\[\sqrt{\lambda}l = \pi n, n \in N,\]
+\[\lambda_n = \frac{\pi^2 n^2}{l^2}, n \in N.\]
+Найдем собственные функции:
+\[X_n(x)=C_{k}sin(\frac{\pi n}{l}x),  n \in N,\]
+Отнормируем собственные функции:
+\[1=(C_{k}sin(\frac{\pi n}{l}x), C_{k}sin(\frac{\pi n}{l}x))=C_{k}^2 \int_{0}^{l} \sin(\frac{\pi n}{l}x)dx=\frac{C_{k}^2l}{2}\]
+Отсюда:
+\[C_{k}=\sqrt{\frac{2}{l}}\]
+
 \subsubsection{ $ \alpha > 0, \beta = 0, \gamma = 0, \delta > 0. $}
+
+В этом случае:
+\begin{equation*}
+ \begin{cases}
+\alpha C_2=0, 
+   \\
+\delta C_1 cos (\sqrt{\lambda}l)=0
+   \\  
+ \end{cases}
+\end{equation*}
+
+\begin{equation*}
+ \begin{cases}
+C_2=0, 
+   \\
+C_1 cos (\sqrt{\lambda}l )=0
+   \\  
+ \end{cases}
+\end{equation*}
+Интересуемся нетривиальными решениями, поэтому приравняем $cos(\sqrt{\lambda}l ) $к нулю
+
+\[cos(\sqrt{\lambda}l) =0,\]
+
+\[\sqrt{\lambda}l = \frac{\pi}{2} +\pi n, n \in N,\]
+
+Отсюда 
+
+\[\lambda_n = \frac{\pi^2(n-\frac{1}{2})^2}{l^2}, n \in N\]
+
+Найдем собственные функции:
+
+\[X_n(x)=C_{K}sin(\frac{\pi(n-\frac{1}{2})}{l}x), n \in N\]
+Отнормируем собственные функции:
+\[1=(C_{k}sin(\frac{\pi(n-\frac{1}{2})}{l}x)), C_{k}sin(\frac{\pi(n-\frac{1}{2})}{l}x))=C_{k}^2 \int_{0}^{l} \sin^2(\frac{\pi(n-\frac{1}{2})}{l}x)dx=\frac{C_{k}^2l}{2}\]
+Отсюда:
+\[C_{k}=\sqrt{\frac{2}{l}}\]
+
 \subsubsection{ $ \alpha = 0, \beta > 0, \gamma > 0, \delta = 0. $}
+
+В этом случае:
+
+\begin{equation*}
+ \begin{cases}
+\beta C_1 \sqrt{\lambda}=0, 
+   \\
+\gamma C_2 cos (\sqrt{\lambda}l )=0
+   \\  
+ \end{cases}
+\end{equation*}
+
+\begin{equation*}
+ \begin{cases}
+C_1=0, 
+   \\
+C_2 cos (\sqrt{\lambda}l )=0
+   \\  
+ \end{cases}
+\end{equation*}
+Интересуемся нетривиальными решениями, поэтому приравняем $cos(\sqrt{\lambda}l ) $к нулю
+
+\[cos(\sqrt{\lambda}l) =0\]
+
+\[\sqrt{\lambda}l = \frac{\pi}{2} +\pi n, n \in N\]
+
+Отсюда 
+
+\[\lambda_n = \frac{\pi^2(n-\frac{1}{2})^2}{l^2}, n \in N\]
+
+Найдем собственные функции:
+
+\[X_n(x)=C_{k}cos(\frac{\pi(n-\frac{1}{2})}{l}x), n \in N\]
+Отнормируем собственные функции:
+\[1=(C_{k}cos(\frac{\pi(n-\frac{1}{2})}{l}x),C_{k}cos(\frac{\pi(n-\frac{1}{2})}{l}x))=C_{k}^2\int_{0}^{l} \cos^2(\frac{\pi(n-\frac{1}{2})}{l}x)dx=\frac{C_{k}^2l}{2}\]
+Отсюда:
+\[C_{k}=\sqrt{\frac{2}{l}}\]
+
 \subsubsection{ $ \alpha = 0, \beta > 0, \gamma = 0, \delta > 0. $}
+
+В этом случае:
+
+\begin{equation*}
+ \begin{cases}
+\beta C_1 \sqrt{\lambda}=0, 
+   \\
+\delta \sqrt{\lambda} C_2 sin (\sqrt{\lambda}l )=0
+   \\  
+ \end{cases}
+\end{equation*}
+
+\begin{equation*}
+ \begin{cases}
+C_1=0, 
+   \\
+C_2 sin (\sqrt{\lambda}e )=0
+   \\  
+ \end{cases}
+\end{equation*}
+Интересуемся нетривиальными решениями, поэтому приравняем $sin(\sqrt{\lambda}l ) $к нулю
+
+\[sin(\sqrt{\lambda}l ) =0\]
+
+\[\sqrt{\lambda}l = \pi n, n \in N\]
+
+Отсюда 
+
+\[\lambda_n = \frac{\pi^2n^2}{l^2}, n \in N\]
+
+Найдем собственные функции:
+
+\[X_n(x)=C_{k}cos(\frac{\pi n}{l}x), n \in N\]
+Отнормируем собственные функции:
+\[1=(C_{k}cos(\frac{\pi n}{l}x),C_{k}cos(\frac{\pi n}{l}x))=C_{k}^2\int_{0}^{l} \cos^2(\frac{\pi n}{l}x)x)dx=\frac{C_{k}^2l}{2}\]
+Отсюда:
+\[C_{k}=\sqrt{\frac{2}{l}}\]
+
+
 \subsubsection{ $ \alpha > 0, \beta = 0, \gamma > 0, \delta > 0. $}
+
+В этом случае:
+
+\begin{equation*}
+ \begin{cases}
+\alpha C_2 =0, 
+   \\
+C_1(\gamma sin(\sqrt{\lambda}l)+\delta \sqrt{\lambda} cos(\sqrt{\lambda}l))=0
+   \\  
+ \end{cases}
+\end{equation*}
+
+Интересуемся нетривиальными решениями, поэтому приравняем $\gamma sin(\sqrt{\lambda}l)+\delta \sqrt{\lambda} cos(\sqrt{\lambda}l)$ к нулю
+
+\begin{equation*}
+ \begin{cases}
+C_2=0, 
+   \\
+\gamma sin(\sqrt{\lambda}l)=-\delta \sqrt{\lambda} cos(\sqrt{\lambda}l)
+   \\  
+ \end{cases}
+\end{equation*}
+
+Так как $cos(\sqrt{\lambda}l)$ и $sin(\sqrt{\lambda}l)$ не могут одновременно равняться 0:
+
+\[\lambda = \frac{\gamma^2}{\delta^2} tg^2(\sqrt{\lambda} l)\]
+
+это уравнение имеет бесконечно много решений.
+
+Найдем собственные функции:
+
+\[X_n(x)=sin(\sqrt{\lambda_n}x), n \in N\]
+
 \subsubsection{ $ \alpha = 0, \beta > 0, \gamma > 0, \delta > 0. $}
 В этом случае:
 \begin{displaymath}
@@ -494,14 +692,84 @@
 \newline
 Построенные графики представлены ниже.
 
-\begin{figure}[h!]
-	\center{\includegraphics[scale=0.6]{UMF_PIC}}
+\begin{figure}[H]
+	\center{\includegraphics[scale=0.4]{UMF_PIC}}
 	\caption{Численно построенные графики}
 \end{figure}
 
+На графиках собственных функций жёлтая линия соответствует собственному значению $\lambda_{1} = 1.52170$, зелёная - 
+$\lambda_{2} = 2.30388$, фиолетовая - $\lambda_{3} = 3.38247$, красная -  $\lambda_{4} = 4.55452$ и синяя - $\lambda_{5} = 8.22286$.
 Как видно из последнего графика, показывающего зависимость амплитуды колебаний от собственного значения, амплитуда колебаний при большом собственном значении оказывается примерно равным $\sqrt{\frac{2}{l}}$. Это же подтверждается и аналитически
 
 \[ \lim\limits_{\lambda \to +\infty} \sqrt{\frac{1}{(1 + (\frac{\alpha}{\beta \sqrt{\lambda}})^2) (\frac{l}{2} - \frac{1}{2\sqrt{\lambda}} (\sin (2\sqrt{\lambda}l + \varphi) + \sin 2\varphi))}} =  \sqrt{\frac{2}{l}}. \]
 
+\section{Основные свойства собственных чисел и собственных функций}
+\begin{enumerate}
+	\item Существует счётное число собственных значений $\lambda_1 < \lambda_2 < ... < \lambda_n < ... $, которым соответсвуют нетривиальные решения задачи - собственные функции $X_1 (x), X_2 (x), ..., X_n (x), ... $
+	\item Собственные функции $X_n (x), X_m (x), n \neq m$ ортогональны между собой с весом $\rho (x)$ на отрезке $0 \leq x \leq l$.
+\[ \int_{0}^{l} X_{n} (x) X_{m} (x) \rho (x) dx = 0, \quad (n \neq m). \]
+	\item Если $X_n (x)$ является собственной функцией при собственном значении $\lambda_n$, то функция $A_n X_n (x)$ ($A_n$ - произвольная постоянная) также является собственной функцией для того же значения.
+\end{enumerate}
+
+Чтобы исключить неопределённость в выборе множителся, можно подчинить собственные функции требованию нормировки:
+\[ ||X_n (x) ||^2 = \int_{0}^{l}  X^2_n (x) \rho (x) dx = 1. \] 
+Тогда такие собственные функции образуют ортогональную и нормированную систему:
+\begin{equation*}
+	 \int_{0}^{l}  X_{n} (x) X_{m} (x) \rho (x) dx =  \begin{cases}
+	0, n \neq m, \\
+	1, n = m.
+	\end{cases}
+\end{equation*}
+
+\section{Определения замкнтуности и полноты ортонормированной системы}
+\textbf{Определение.} Ортонормированная система ${X_n (x)}$  называется \textit{замкнутой}, если каждая функция $f(x)$ может быть разложена в сходящийся в среднем ряд Фурье по функциям данной системы.
+\[ \forall \varepsilon > 0 \quad \forall f \quad \exists f_1 f_2 ... f_n \quad | \quad ||\sum_{i = 1}^n f_i X_i (x) - f(x) || < \varepsilon  \]
+\textbf{Определение.} Ортонормированная система ${X_n (x)}$  называется \textit{полной}, если не существует такой нетривиальной функции $f(x)$, что $\int_{0}^{l} f(x) X_n (x) \rho (x) dx = 0 \quad \forall n$.
+\section{Определения поточечной и равномерной сходимости рядов Фурье. Теорема Стеклова о равномерной сходимости}
+\textbf{Определение.} Ряд Фурье сходится поточечно , если
+\[ \forall x \in [0, l] \quad \forall \varepsilon > 0 \quad \exists N_\varepsilon \quad \forall n > N \quad || \sum_{i = 1}^{n} f_i X_i (x) - f(x) || < \varepsilon\]
+\textbf{Определение.} Ряд Фурье сходится равномерно, если
+\[ \forall \varepsilon > 0 \quad \exists N_\varepsilon \quad \forall n > N \quad \forall x \in [0, l] \quad || \sum_{i = 1}^{n} f_i X_i (x) - f(x) || < \varepsilon\]
+\textbf{Теорема В.А. Стеклова.} Произвольная, дважды непрерывно дифференцируемая функция $f(x)$, удовляетворяющая граничным условиям $f(0) = f(l) = 0$, разлагается в равномерно и абсолютно сходящийся ряд по собственным функциям $X_{n} (x)$:
+\[ f(x) = \sum_{n = 1}^{\infty} f_n X_n (x) \quad f_n = \frac{1}{||X_n (x)||^2} \int_{0}^{l} f(x) X_n (x) \rho (x) dx \quad ||X_n (x) ||^2 = \int_{0}^{l}  X^2_n (x) \rho (x) dx \]
+
+\chapter{Специальные функции}
+
+\section{Функции Бесселя}
+\subsection{Найти фундаментальную систему решений уравнения Бесселя $\nu-$го порядка}
+
+Уравнение имеет вид:
+\[ y'' + \frac{y'}{x} + (1 - \frac{\nu^2}{x^2}) y = 0, \]
+где $\nu \in \mathbb{R}$ или $\nu \in \mathbb{C} \quad | \quad Re\nu < 0$.
+
+Решение будем искать в виде:
+\[ y = x^{\sigma} \sum_{n = 0}^{+\infty} a_{n} x^{n}, \quad a_{0} \neq 0, \]
+поскольку уравнение имеет особенность в точке $x = 0$, $\sigma$ называется характеристическим показателем.
+
+Подставим ряд в уравнение и соберём слагаемые при $x^{n + \sigma - 2}$:
+\[ \sum_{n = 0}^{+\infty} (n + \sigma)(n + \sigma - 1)a_{n} x^{n + \sigma - 2} + (n+ \sigma)a_{n} x^{n + \sigma - 2} + a_{n} x^{n + \sigma} - \nu^2 a_{n} x^{n + \sigma - 2} = 0 \]
+\[ \sum_{n = 0}^{+\infty} a_{n} x^{n + \sigma - 2} ((n + \sigma)^2 - \nu^2 + x^2) = \sum_{n = 0}^{+\infty} a_{n} x^{n + \sigma - 2} ((n + \sigma)^2 - \nu^2) + \sum_{n = 0}^{+\infty} a_{n} x^{n + \sigma} = 0\]
+
+Приравняем к нулю коэффициенты при степенях $\sigma - 2$, $\sigma - 1$, ..., $n + \sigma - 2$:
+\begin{equation*}
+	\begin{cases}
+		a_{0} (\sigma^2 - \nu^2) = 0 \\
+		a_{1}((1 + \sigma)^2 - \nu^2) = 0 \\
+		a_{2}((2 + \sigma)^2 - \nu^2) + a_{0} = 0 \\
+		a_{3}((3 + \sigma)^2 - \nu^2) + a_{1} = 0 \\
+		... \\
+		a_{n}((n + \sigma)^2 - \nu^2) + a_{n - 2} = 0
+	\end{cases}
+\end{equation*}
+
+Поскольку $a_{0} \neq 0$ по условию, то $\sigma^2 - \nu^2 = 0$ и $\sigma = \pm \nu$. Для второго уравнения системы с учётом предыдущей выкладки имеем:
+\[ a_{1} (1 + 2\sigma + \sigma^2 - \nu^2) = a_{1} (1 + 2\sigma) = 0 \Rightarrow a_{1} = 0. \]
+
+$\forall n > 1$ получим рекуррентную формулу для коэффициентов $a_{n}$:
+
+\[ a_{n} (n + \sigma - \nu)(n + \sigma + \nu) + a_{n - 2} = 0 \]
+\[ a_{n} = - \frac{a_{n - 2}}{(n + \sigma - \nu)(n + \sigma + \nu)} \]
+
+Поскольку ранее было показано, что $a_{1} = 0$, то из рекуррентной формулы можно увидеть, что все $a_{2l + 1} = 0, \quad l > 0$.
 
 \end{document}
