@@ -819,7 +819,47 @@ $\forall n > 1$ получим рекуррентную формулу для к
 \[  J_{-k}(x) = \sum_{n = k}^{+\infty} (-1)^n \frac{1}{\Gamma(n + 1) \Gamma(n - k + 1)} (\frac{x}{2})^{2n - k} =   \sum_{m = 0}^{+\infty} \frac{ (-1)^{m + k}}{\Gamma(m + k + 1) \Gamma(m + 1)} (\frac{x}{2})^{2m + k} = (-1)^k J_k (x) \]
 
 Установили линейную зависимость функций в этом случае.
+\subsection{Получить рекуррентные формулы для функций Бесселя порядка $\nu$}
 
+\textbf{Утверждение.} $\frac{d}{dx} \frac{J_{\nu}(x)}{x^{\nu}} = - \frac{J_{\nu + 1}(x)}{x^\nu}$
+\newline
+
+Доказательство.
+\[ x^{\nu} \frac{d}{dx} \frac{J_{\nu}(x)}{x^{\nu}} = (\frac{x}{2})^{\nu} = \sum_{n = 1}^{+\infty} (-1)^n \frac{0.5 * n * (\frac{x}{2})^{2n - 1}}{n! \Gamma(n + \nu + 1)} = \sum_{n = 1}^{+\infty} \frac{(-1)^n}{\Gamma(n) \Gamma(n + \nu + 1)} (\frac{x}{2})^{2n + \nu - 1} = \]
+\[ = -\sum_{l = 0}^{+\infty} \frac{(-1)^l}{\Gamma(l + 1)\Gamma(l + \nu + 1 + 1)} (\frac{x}{2})^{2l + \nu + 1} = - J_{\nu + 1}(x)\]
+
+Поделим обе части равенства на $x^{\nu}$:
+\[ \frac{d}{dx} \frac{J_{\nu}(x)}{x^{\nu}} = - \frac{J_{\nu + 1}(x)}{x^\nu} \]
+
+\textbf{Утверждение.} $\frac{d}{dx} (x^{\nu} J_{\nu}(x)) = x^\nu J_{\nu - 1}(x)$
+\newline
+
+Доказательство.
+
+\[ \frac{d(x^{\nu} J_{\nu}(x))}{dx} = \sum_{n = 0}^{+\infty} \frac{(-1)^k 2(k + \nu) * 0.5 * (\frac{x}{2})^{2(k + \nu) - 1}}{\Gamma(n + 1) \Gamma(n + \nu + 1)} = x^\nu \sum_{n = 0}^{+\infty} \frac{(-1)^n (n + \nu)}{(n + \nu) \Gamma(n + 1) \Gamma(n + \nu - 1 + 1)} (\frac{x}{2})^{2n + \nu - 1} = \]
+\[ = x^\nu J_{\nu - 1}(x) \]
+
+Теперь получим рекуррентные формулы, которые связывают $J_{\nu - 1}(x)$, $J_{\nu}(x)$, и $J_{\nu + 1}(x)$:
+\begin{equation*}
+	\begin{cases}
+		\frac{\nu J_{\nu}(x)}{x} - J'_{\nu}(x) = J_{\nu + 1}(x) \\
+		\frac{\nu J_{\nu}(x)}{x} + J'_{\nu}(x) = J_{\nu - 1}(x)
+	\end{cases}
+\end{equation*}
+Сложим и вычтём уравнения системы друг из друга:
+\begin{equation*}
+	\begin{cases}
+		J_{\nu + 1}(x) + J_{\nu - 1}(x) = \frac{2\nu}{x} J_{\nu}(x) \\
+		J_{\nu + 1}(x) - J_{\nu - 1}(x) = -2 J'_{\nu}(x)
+	\end{cases}
+\end{equation*}
+
+Таким образом:
+\[  J_{\nu + 1}(x) = \frac{2\nu}{x} J_{\nu}(x) - J_{\nu - 1}(x) \]
+
+\subsection{Вывести асимптотические формулы для функций Бесселя 1 и 2 рода}
+
+\subsection{Построить графики функций Бесселя 1 и 2 рода для $\nu = 0.1$}
 \begin{figure}[H]
 	\center{\includegraphics[scale=0.7]{BESSEL1}}
 	\caption{График функции Бесселя первого рода порядка 0,1}
