@@ -934,7 +934,7 @@ N_\nu (x) = J_\nu (x) ctg(\pi \nu) - \frac{1}{sin\pi \nu} J_{-\nu} (x)
 Получили выражение собственных чисел для краевой задачи.
 
 Собственные функции равны: 
-\[y_n (x) = J_{\nu} (\frac{1}{l} (\frac{3\pi}{4} + \frac{\pi n}{2} + \pi k ) x) \]
+\[y_n (x) = C_1 J_{\nu} (\frac{1}{l} (\frac{3\pi}{4} + \frac{\pi n}{2} + \pi k ) x) \]
 
 Рассмотрим краевую задачу $y'(l) = 0$, $|y(0)| < \infty$.
 
@@ -950,7 +950,29 @@ N_\nu (x) = J_\nu (x) ctg(\pi \nu) - \frac{1}{sin\pi \nu} J_{-\nu} (x)
 \[ \lambda_n = \frac{1}{l} (\frac{\pi}{2}\nu + \frac{\pi}{4} + \pi k), \quad k \in \mathbb{Z} \]
 
 И собственные функции имеют вид:
-\[ y_n(x) = J_{\nu} (\frac{1}{l} (\frac{\pi}{2}\nu + \frac{\pi}{4} + \pi k) x) \].
+\[ y_n(x) = C_1 J_{\nu} (\frac{1}{l} (\frac{\pi}{2}\nu + \frac{\pi}{4} + \pi k) x). \]
+\subsection{Вычислить квадрат нормы собственных функций}
+
+Исходное уравнение можно переписать в виде: 
+\[ \frac{d}{dx}(xy') + (x - \frac{\nu^2}{x^2})y = 0 \]
+
+Подставим в него собственные функции, тогда:
+\begin{equation*}
+	\begin{cases}
+		\frac{d}{dx}(xy'_n) + (\lambda^2_n x - \frac{\nu^2}{x^2})y_n = 0 \\
+		\frac{d}{dx}(xy'_m) + (\lambda^2_m x - \frac{\nu^2}{x^2})y_m = 0
+	\end{cases}
+\end{equation*}
+
+Умножим первое уравнение на $y_m(x)$, второе - на $y_n(x)$ и вычтем:
+\[ \frac{d}{dx}(xy'_n)y_m - \frac{d}{dx}(xy'_m) y_n + (\lambda^2_n - \lambda^2_m)x y_n y_m = 0\]
+
+Проинтегрируем по отрезку $[0, l]$, очевидно первые два слагаемых взаимно уничтожатся:
+\[ \int_{0}^{l}  (\lambda^2_n - \lambda^2_m)x y_n y_m = -\frac{l}{\lambda^2_n - \lambda^2_m} (\lambda_n y'_n(l)y_m(l) - \lambda_m y_n(l) y'_m(l))\]
+
+Вычислим квадрат нормы:
+\[ ||y_n||^2 = ||J_\nu (\lambda_n x)||^2 = \int_{0}^{l} x J^2_\nu (\lambda_n x) dx = \lim_{\lambda_m \rightarrow \lambda_m} \frac{\lambda_n J'_\nu (\lambda_n l) J_\nu(\lambda_m l)}{\lambda^2_m - \lambda^2_n} = \]
+\[ = \lim_{\lambda_m \rightarrow \lambda_m} \frac{\lambda_n \lambda_m J'_\nu (\lambda_n l) J'_\nu (\lambda_m l)}{2\lambda_m} = \frac{\lambda_n}{2} (J'_\nu (\lambda_n l))^2 \]
 
 \subsection{Доказать 5 основных свойств собственных чисел и собственных функций}
 
