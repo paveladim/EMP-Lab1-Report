@@ -970,6 +970,10 @@ N_\nu (x) = J_\nu (x) ctg(\pi \nu) - \frac{1}{sin\pi \nu} J_{-\nu} (x)
 Проинтегрируем по отрезку $[0, l]$, очевидно первые два слагаемых взаимно уничтожатся:
 \[ \int_{0}^{l}  (\lambda^2_n - \lambda^2_m)x y_n y_m = -\frac{l}{\lambda^2_n - \lambda^2_m} (\lambda_n y'_n(l)y_m(l) - \lambda_m y_n(l) y'_m(l))\]
 
+Здесь в зависимости от краевой задачи в скобке занулятся разные слагаемые и с точностью до переобозначения переменных можно получить выражение для $y_n (x)$:
+
+\[ y_n (x) = -\frac{l \lambda_n}{\lambda^2_n - \lambda^2_m} J'_\nu (\lambda_n x) J_\nu (\lambda_m x) \]
+
 Вычислим квадрат нормы:
 \[ ||y_n||^2 = ||J_\nu (\lambda_n x)||^2 = \int_{0}^{l} x J^2_\nu (\lambda_n x) dx = \lim_{\lambda_m \rightarrow \lambda_m} \frac{\lambda_n J'_\nu (\lambda_n l) J_\nu(\lambda_m l)}{\lambda^2_m - \lambda^2_n} = \]
 \[ = \lim_{\lambda_m \rightarrow \lambda_m} \frac{\lambda_n \lambda_m J'_\nu (\lambda_n l) J'_\nu (\lambda_m l)}{2\lambda_m} = \frac{\lambda_n}{2} (J'_\nu (\lambda_n l))^2 \]
