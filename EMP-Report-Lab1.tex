@@ -910,6 +910,48 @@ N_\nu (x) = J_\nu (x) ctg(\pi \nu) - \frac{1}{sin\pi \nu} J_{-\nu} (x)
 \end{figure}
 
 \subsection{Найти собственные числа и собственные функции для стандартных краевых задач}
+
+Рассмотрим краевую задачу $y(l) = 0$, $|y(0)| < \infty$.
+
+Пусть $x = \lambda \xi$, тогда уравнение примет вид:
+\[ \lambda^2 \frac{d^2y}{d\xi^2} + \frac{\lambda^2}{\xi} \frac{dy}{d\xi} + \lambda^2(1 - \frac{\nu^2}{\xi^2})y = 0 \]
+\[ \frac{d^2y}{d\xi^2} + \frac{1}{\xi} \frac{dy}{d\xi} + (1 - \frac{\nu^2}{\xi^2})y = 0 \]
+
+В зависимости от $\nu$ получим разные ФСР. Пусть $\nu = n \in \mathbb{Z}$, тогда
+\[ y(\xi) = C_1 J_\nu (\xi) + C_2 N_\nu (\xi)\]
+
+Поскольку в нуле функция Бесселя второго рода неограничена, то $C_2 = 0$, и собственная функция:
+\[ y_n (x) = C_1 J_\nu (\lambda_n x)\]
+\[ y_n (l) = 0 = C_1 J_\nu(\lambda_n l) \approx C_{1} \sqrt{\frac{2}{\pi l \lambda_n}} \cos(\lambda_n l - \frac{\pi n}{2} - \frac{\pi}{4}) \]
+
+Если $\nu \notin \mathbb{Z}$, то $y(\xi) = C_1 J_\nu (\xi) + C_2 J_{-\nu} (\xi)$. В нуле $J_{-\nu} (\xi)$ неограничена, значит $C_2 = 0$. И приходим к тому же уравнению на собственные числа, как и в случае целого порядка.
+
+Нас интересуют нетривиальные решения, значит:
+\[ \cos(\lambda_n l - \frac{\pi n}{2} - \frac{\pi}{4})  = 0\]
+\[ \lambda_n l - \frac{\pi n}{2} - \frac{\pi}{4} = \frac{\pi}{2} + \pi k, \quad k \in \mathbb{Z} \]
+\[ \lambda_n = \frac{1}{l} (\frac{3\pi}{4} + \frac{\pi n}{2} + \pi k ), \quad k \in \mathbb{Z} \]
+
+Получили выражение собственных чисел для краевой задачи.
+
+Собственные функции равны: 
+\[y_n (x) = J_{\nu} (\frac{1}{l} (\frac{3\pi}{4} + \frac{\pi n}{2} + \pi k ) x) \]
+
+Рассмотрим краевую задачу $y'(l) = 0$, $|y(0)| < \infty$.
+
+Рассуждения аналогичны предыдущему случаю. $y_n(x) = C_1 J_\nu (\lambda_n x)$.
+\[ J'_\nu (x) = \frac{1}{2} (J_{\nu - 1} (x) - J_{\nu + 1} (x)) \approx \sqrt{\frac{2}{\pi x}} \frac{1}{2} (\cos(x - \frac{\pi}{2}(\nu - 1) - \frac{\pi}{4}) - \cos(x - \frac{\pi}{2}(\nu +1 1) - \frac{\pi}{4})) = \]
+\[ = -\sqrt{\frac{2}{\pi x}} \sin(x - \frac{\pi}{2}\nu - \frac{\pi}{4}) \]
+
+\[ 0 = y'_n (l) = C_1 J'_\nu (\lambda_n l) \approx - C_1 \sqrt{\frac{2}{\pi \lambda_n l}} \sin(\lambda_n l - \frac{\pi}{2}\nu - \frac{\pi}{4}) \]
+
+Поскольку интересуемся нетривиальными решениями, то:
+\[ \sin(\lambda_n l - \frac{\pi}{2}\nu - \frac{\pi}{4}) = 0 \]
+\[ \lambda_n l - \frac{\pi}{2}\nu - \frac{\pi}{4} = \pi k, \quad k \in \mathbb{Z} \]
+\[ \lambda_n = \frac{1}{l} (\frac{\pi}{2}\nu + \frac{\pi}{4} + \pi k), \quad k \in \mathbb{Z} \]
+
+И собственные функции имеют вид:
+\[ y_n(x) = J_{\nu} (\frac{1}{l} (\frac{\pi}{2}\nu + \frac{\pi}{4} + \pi k) x) \].
+
 \subsection{Доказать 5 основных свойств собственных чисел и собственных функций}
 
 \textbf{Свойство 1.} Две собственные функции, соответствующие различным собственным значениям на интервале $[0, l]$, ортогональны друг другу с весом $\rho(x)$.
